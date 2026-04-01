@@ -2,6 +2,6 @@
 
 The paper is now accepted to ICME 2026.
 
-The code of the EfficientPIE is coming soon.
+The code of the VersaGauss is coming soon.
 
 
