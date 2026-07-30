@@ -1,6 +1,10 @@
 <h3 align="center">A Versatile Framework for Generating Multiphase Dynamics with 3D Gaussians</h3>
 
 <p align="center">
+  Ruijie Su<sup></sup>, Lingxiao Yang<sup></sup>, Xiaohua Xie<sup></sup>, Jianhuang Lai<sup></sup>
+</p>
+
+<p align="center">
   <em>Accepted to IEEE International Conference on Multimedia and Expo (ICME) 2026</em>
 </p>
 
