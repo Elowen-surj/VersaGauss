@@ -1,0 +1,115 @@
+{
+    "object_num": 2,
+    "n_grid": 150,
+    "grid_lim": 4,
+    "g": [0,0,-9.8],
+    "grid_v_damping_scale": 0.9999,
+    "substep_dt": 1e-4,
+    "frame_dt": 4e-2,
+    "frame_num": 100,
+    "material_params": [
+        {
+            "nu": 0.2,
+            "E": 5e4,
+            "bulk_modulus": 5e2,
+            "material": "jelly",
+            "density": 50,
+            "gamma": 8,
+            "rpic_damping": 0.0
+        },
+        {
+            "nu": 0.4,
+            "E": 1.4e5,
+            "material": "snow",
+            "density": 5,
+            "rpic_damping": 0.0,
+            "compression": 1.5e-2,
+            "stretch": 8e-3,
+            "hardening_coe": 5.0
+        }
+    ],
+    "preprocess_params": [
+        {
+            "model_path": "model/orange.ply",
+            "center_point": [2.0, 1.0, 1.0],
+            "scale": 1.5,
+            "opacity_threshold": 0.02,
+            "opacity_scale": 0.02,
+            "rotation_degree": [-43, -90],
+            "rotation_axis": [1, 0],
+            "color": [154,77,0],
+            "particle_filling": {
+                "n_grid": 150,
+                "density_threshold": 40.0,
+                "search_threshold": 0.5,
+                "search_exclude_direction": 5,
+                "ray_cast_direction": 0,
+                "max_particles_num": 20000000,
+                "max_partciels_per_cell": 1,
+                "boundary": [
+                    1.25,
+                    2.75,
+                    0.25,
+                    1.75,
+                    0.25,
+                    1.75
+                ],
+                "visualize": true
+            }
+        },
+        {
+            "model_path": "model/snowman.ply",
+            "camera_path": "model",
+            "center_point": [3.24740933, 1.0, 0.8],
+            "scale": 1.096,
+            "opacity_threshold": 0.1,
+            "rotation_degree": [90, 180, 180],
+            "rotation_axis": [0, 1, 2],
+            "particle_filling": {
+                "n_grid": 100,
+                "density_threshold": 40.0,
+                "search_threshold": 0.1,
+                "search_exclude_direction": 5,
+                "ray_cast_direction": 0,
+                "max_particles_num": 2000000,
+                "max_partciels_per_cell": 1,
+                "boundary": [
+                    2.7,
+                    3.7,
+                    0.5,
+                    1.5,
+                    0.5,
+                    1.5
+                ],
+                "visualize": true
+            }
+        }
+    ],
+    "boundary_conditions": [
+        {
+            "type": "bounding_box"
+        },
+        {
+            "type": "add_plane",
+            "x_plane": [0.5, 3.6],
+            "y_plane": [0.25, 1.75],
+            "z_plane": [0.3, 3.0]
+        }
+    ],
+    "modify_material": {
+        "start_time": 0.04,
+        "object_material_index": 0,
+        "material": "fluid"
+    },
+    "mpm_space_vertical_upward_axis": [0,0,1],
+    "mpm_space_viewpoint_center": [2.0, 1, 1.5],
+    "default_camera_index": -1,
+    "show_hint": false,
+    "init_azimuthm": -45,
+    "init_elevation": 15,
+    "init_radius": 3,
+    "move_camera": false,
+    "delta_a": 0.0,
+    "delta_e": 0.0,
+    "delta_r": 0.0
+}

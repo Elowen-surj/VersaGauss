@@ -1,0 +1,141 @@
+{
+    "object_num": 2,
+    "n_grid": 150,
+    "grid_lim": 3,
+    "g": [0,0,-2.0],
+    "grid_v_damping_scale": 0.9999,
+    "substep_dt": 1e-4,
+    "frame_dt": 4e-2,
+    "frame_num": 50,
+    "material_params": [
+        {
+            "nu": 0.4,
+            "E": 1.4e5,
+            "bulk_modulus": 600,
+            "material": "snow",
+            "density": 200,
+            "rpic_damping": 0.0,
+            "compression": 1.5e-2,
+            "stretch": 8e-3,
+            "hardening_coe": 5.0
+        },
+        {
+            "nu": 0.2,
+            "E": 2e5,
+            "material": "jelly",
+            "density": 100,
+            "rpic_damping": 0.0
+        }
+    ],
+    "preprocess_params": [
+        {
+            "model_path": "model/snowman.ply",
+            "camera_path": "model",
+            "center_point": [1.5, 1.0, 1.0],
+            "scale": 1.0,
+            "opacity_threshold": 0.1,
+            "rotation_degree": [90, 180, 180],
+            "rotation_axis": [0, 1, 2],
+            "particle_filling": {
+                "n_grid": 100,
+                "density_threshold": 40.0,
+                "search_threshold": 0.1,
+                "search_exclude_direction": 5,
+                "ray_cast_direction": 0,
+                "max_particles_num": 2000000,
+                "max_partciels_per_cell": 1,
+                "boundary": [
+                    1.0,
+                    2.0,
+                    0.5,
+                    1.5,
+                    0.5,
+                    1.5
+                ],
+                "visualize": true
+            }
+        },
+        {
+            "model_path": "model/tennis.ply",
+            "camera_path": "model",
+            "center_point": [0.7, 1.0, 1.3534],
+            "scale": 0.351,
+            "opacity_threshold": 0.02,
+            "rotation_degree": [90, 180],
+            "rotation_axis": [0,1],
+            "particle_filling": {
+                "n_grid": 100,
+                "density_threshold": 40.0,
+                "search_threshold": 0.1,
+                "search_exclude_direction": 5,
+                "ray_cast_direction": 0,
+                "max_particles_num": 2000000,
+                "max_partciels_per_cell": 1,
+                "boundary": [
+                    0.15,
+                    0.85,
+                    0.65,
+                    1.35,
+                    1.0,
+                    1.7034
+                ],
+                "visualize": true
+            }
+        }
+    ],
+    "boundary_conditions": [
+        {
+            "type": "bounding_box"
+        },
+        {
+            "type": "add_plane",
+            "x_plane": [0.2, 3.0],
+            "y_plane": [0.2, 3.0],
+            "z_plane": [0.45, 3.0]
+        },
+        {
+            "type": "enforce_particle_translation",
+            "point": [
+                0.5, 1.0, 1.3534
+            ],
+            "size": [
+                0.3, 0.3, 0.3
+            ],
+            "velocity": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "start_time": 0,
+            "end_time": 0.04
+        },
+        {
+            "type": "particle_impulse",
+            "force": [
+                2.5,
+                0.0,
+                0.0
+            ],
+            "point": [0.5, 1.0, 1.3534],
+            "size": [0.2, 0.2, 0.2],
+            "num_dt": 401,
+            "start_time": 0
+        }
+    ],
+    "mpm_space_vertical_upward_axis": [0,0,1],
+    "mpm_space_viewpoint_center": [1.0, 1, 1],
+    "default_camera_index": -1,
+    "show_hint": false,
+    "init_azimuthm": -45,
+    "init_elevation": 0,
+    "init_radius": 3,
+    "move_camera": false,
+    "first_move_frame": 45,
+    "delta_a": 5.0,
+    "delta_e": 0.0,
+    "delta_r": 0.0,
+    "multi_camera": true,
+    "camera_delta_a": 90.0,
+    "camera_delta_e": 0.0,
+    "camera_nums": 4
+}
